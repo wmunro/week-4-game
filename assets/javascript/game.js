@@ -1,6 +1,9 @@
 	var Wins = 0
 	var Losses = 0
-
+	var	crystal1
+	var crystal2
+	var crystal3
+	var crystal4
 
 $(document).ready(function(){
 // console.log("ready")
@@ -11,7 +14,7 @@ $(document).ready(function(){
 		 crystal2 = 1 + Math.floor(Math.random()*12)
 		 crystal3 = 1 + Math.floor(Math.random()*12)
 		 crystal4 = 1 + Math.floor(Math.random()*12)
-		 randomSelector = Math.floor((Math.random() * 112) + 19)
+		 randomSelector = Math.floor((Math.random() * 101) + 19)
 		 UserAdd = 0
 
 
