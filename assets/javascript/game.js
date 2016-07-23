@@ -1,79 +1,74 @@
-	var Wins = 0
-	var Losses = 0
-	var	crystal1
-	var crystal2
-	var crystal3
-	var crystal4
+	var wins = 0
+	var losses = 0
+	var	scoreTotal =0;
 
-$(document).ready(function(){
-// console.log("ready")
+var random = Math.floor(Math.random() * (120 - 19 +1) + 19);
 
-	// start game
-	function startGame(){
-		 crystal1 = 1 + Math.floor(Math.random()*12)
-		 crystal2 = 1 + Math.floor(Math.random()*12)
-		 crystal3 = 1 + Math.floor(Math.random()*12)
-		 crystal4 = 1 + Math.floor(Math.random()*12)
-		 randomSelector = Math.floor((Math.random() * 101) + 19)
-		 UserAdd = 0
+document.getElementById("randomNumber").innerHTML = random;
 
 
-		// The attr() method sets or returns attributes and values of the selected elements.
+var randomArray = [];
+
+function getSum(total, num) {
+	scoreTotal = total + num;
+}
+
+function arraySum(item) {
+     randomArray.reduce(getSum);
+     document.getElementById("scoreTotal").innerHTML = scoreTotal;
+}
 
 
-		$('#crystal1').attr("value", crystal1);
-		$('#crystal2').attr("value", crystal2);
-		$('#crystal3').attr("value", crystal3);
-		$('#crystal4').attr("value", crystal4);
-		$('#randomNumber').html(randomSelector);
-		$('#userNumber').html(UserAdd);
-		
-	}
-	
-	
-	
-	//start game
-	startGame()
 
-	
-	$('.crystal').click(function(){
-			UserAdd = Number(UserAdd)+Number($(this).val())
-			// console.log(UserAdd)
-			$('#userNumber').html(UserAdd)
-		if (UserAdd < randomSelector){
-			alert('Your a winner')
-			Wins++
-			$('#wins').html('wins: ' + wins)
-			$('#losses').html('losses: ' + losses)
-			startGame()
-
-		}
-			
-	
-		else if (UserAdd == randomSelector){
-			alert('Your a winner')
-			Wins++
-			$('#wins').html('wins: ' + wins)
-			$('#losses').html('losses: ' + losses)
-			startGame()	
-		
-	}
-		else {
-			alert('looser')
-			Losses++
-			$('#wins').html('wins:' + wins)
-			$('#losses').html('losses:' + losses)
-			startGame()
-			// console.log("wins")
-			// console.log("losses")
-		}
-
-	})
-
-	$('#restartGame').click(function(){
-
-	startGame()
-		
-	});
+$("#crystal1").click(function() {
+	var random1 = Math.floor((Math.random() * 12) + 1);
+	randomArray.push(random1);
+	getSum();
+	arraySum();
 
 });
+
+$("#crystal2").click(function() {
+	var random2 = Math.floor((Math.random() * 12) + 1);
+	randomArray.push(random2);
+	getSum();
+	arraySum();
+
+});
+
+$("#crystal3").click(function() {
+	var random3 = Math.floor((Math.random() * 12) + 1);
+	randomArray.push(random3);
+	getSum();
+	arraySum();
+
+});
+
+$("#crystal4").click(function() {
+	var random4 = Math.floor((Math.random() * 12) + 1);
+	randomArray.push(random4);
+	getSum();
+	arraySum();
+
+});
+
+
+if (random == scoreTotal) {
+	wins +=1;
+	document.getElementById ("alert").innerHTML = "you win";
+	document.getElementById ("wins").innerHTML = "wins: " + wins;
+}
+
+if (random < scoreTotal) {
+	losses +=1;
+	document.getElementById ("alert").innerHTML = "you lose";
+	document.getElementById ("wins").innerHTML = "losses: " + losses;
+}
+
+function restartGame () {
+	randomArray = [];
+	document.getElementById("alert").innerHTML = "";
+}
+
+restartGame();
+

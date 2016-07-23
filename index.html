@@ -7,10 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 		<style type="text/css">
 
-		.crystal1 .crystal2 .crystal3 .crystal4 {
-			width: 200px;
-			height: 200px;
-		}
+		
 		</style>
 		</head>
 	<title>Crystal Game</title>
@@ -38,13 +35,14 @@
 <br>
 		<div class="container">
 			<div class="row">
-				<div id="display" class="col-sm-6" style="background-color:lightgreen"><h2 id="randomNumber"></h2></div>
-				<div id="score" class="col-sm-6" style="background-color:lightblue">
-					<div id="wins" class="col-sm-6"><h3>wins #</h3></div>
-					<div id="losses" class="col-sm-6"><h3>losses #</h3></div>
+			<div id ="alert"></div>
+				<div class="col-sm-6" style="background-color:lightgreen"><h2 id="randomNumber"></h2></div>
+				<div class="col-sm-6" style="background-color:lightblue">
+					<div id="wins" class="col-sm-6"><h3>wins:<br>0</h3></div>
+					<div id="losses" class="col-sm-6"><h3>losses:<br>0</h3></div>
 				</div>
 			</div>
-		</div>
+		
 		<br>
 
 		<div class="row">
@@ -59,18 +57,19 @@
 
 			<button id= 'restartGame' class= "btn btn default"><img src="assets/images/newgame.gif"/></button>
 		</div>
-</div>
+
 		<br>
-<div class="container">
+
 			<div class="row"> 
-				<div class="col-md-12" style="background-color:orange">
-					<div id="scoreTotal">
-					<h3 id="userNumber"></h3>
+					<div style="background-color:orange">
+						<h3>Total Score:</h3>
+						<div id="scoreTotal">
+					
 					</div>
 				</div>
 			</div>
-</div>
-			
+	</div>
+</div>			
 
 
 
