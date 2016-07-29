@@ -1,3 +1,5 @@
+	
+$(document).ready(function(){
 	var wins = 0
 	var losses = 0
 	var	scoreTotal =0;
@@ -70,5 +72,7 @@ function restartGame () {
 	document.getElementById("alert").innerHTML = "";
 }
 
+
 restartGame();
 
+});
