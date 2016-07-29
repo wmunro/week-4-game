@@ -1,10 +1,15 @@
 	
 $(document).ready(function(){
+
+// varables
 	var wins = 0
 	var losses = 0
 	var	scoreTotal =0;
 
+
+// Creating a random number
 var random = Math.floor(Math.random() * (120 - 19 +1) + 19);
+
 
 document.getElementById("randomNumber").innerHTML = random;
 
@@ -21,7 +26,7 @@ function arraySum(item) {
 }
 
 
-
+// crystal id /random array
 $("#crystal1").click(function() {
 	var random1 = Math.floor((Math.random() * 12) + 1);
 	randomArray.push(random1);
@@ -54,7 +59,7 @@ $("#crystal4").click(function() {
 
 });
 
-
+// score total with alert
 if (random == scoreTotal) {
 	wins +=1;
 	document.getElementById ("alert").innerHTML = "you win";
@@ -66,7 +71,7 @@ if (random < scoreTotal) {
 	document.getElementById ("alert").innerHTML = "you lose";
 	document.getElementById ("wins").innerHTML = "losses: " + losses;
 }
-
+// game restart
 function restartGame () {
 	randomArray = [];
 	document.getElementById("alert").innerHTML = "";
